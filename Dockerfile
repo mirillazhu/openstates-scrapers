@@ -14,7 +14,7 @@ RUN apt-get update -qq \
       unzip \
       mdbtools \
       libpq5 \
-      gdal-bin \
+      libgdal36 \
       build-essential \
       git \
       libssl-dev \

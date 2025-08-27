@@ -1,4 +1,4 @@
-version: "3.5"
+# version: "3.5"
 
 # shared network so other openstates packages (core, etc.) can reach these services
 networks:
@@ -44,6 +44,7 @@ services:
 
   mysql:
     image: mariadb:10.5
+    platform: linux/amd64 # added for Mac M1 compatibility
 #    command: mysqld_safe --max_allowed_packet=512M
     ports:
       - "3306:3306"
@@ -85,7 +86,9 @@ services:
       - openstates-network
   db:
     image: "mdillon/postgis:11-alpine"
+    platform: linux/amd64 # added for Mac M1 compatibility
     hostname: "db"
+    #container_name: openstatesorg-db-1
     ports:
       - "5405:5432"
     environment:
