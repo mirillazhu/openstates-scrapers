@@ -88,7 +88,6 @@ services:
     image: "mdillon/postgis:11-alpine"
     platform: linux/amd64 # added for Mac M1 compatibility
     hostname: "db"
-    #container_name: openstatesorg-db-1
     ports:
       - "5405:5432"
     environment:
